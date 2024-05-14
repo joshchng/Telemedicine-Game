@@ -53,7 +53,7 @@ CSS plays a pivotal role in this project, especially in managing the visibility 
 - **index.html**: Hosts the structural layout of the game's interface.
 - **style.css**: Defines all the CSS rules for the game, ensuring a consistent and engaging visual experience.
 - **main.js**: Contains all the logic for game operation, including timers, game state management, and event handling.
-- 
+  
 ### Future Directions
 - **Fix Game Loop:** Working on resolving the game loop termination in the Qualtrics environment to ensure smooth gameplay and proper session endings.
 - **JSON Loading:** Plans are underway to enhance the game's flexibility and scalability by allowing it to run based on a JSON file that describes various patient scenarios. This will facilitate easier updates and expansions of scenario data without altering the core game code.

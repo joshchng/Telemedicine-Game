@@ -18,7 +18,7 @@ The game aims to simulate the experience of a doctor during a shift, where playe
 ### Game Flow
 1. **Starting the Game**:
    - Players begin by clicking the 'Start Game' button.
-   - A brief tutorial explains the game mechanics.
+   - Here players are also introduced to the common symptoms and diagnoses they may see.
 
 2. **Patient Diagnoses**:
    - Each patient case presents with different symptoms.

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BOBALAB Hospital Simulator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js"></script>
+</head>
+
+<header>
+    <h1>Hospital Simulator Game</h1>
+    <p id="intro-text">You are a doctor at UCSF. Your goal is to diagnose patients correctly throughout your shift. Each interaction will test your medical knowledge and decision-making skills. You will receive breaks where you can decide to either do nothing or see telemedicine patients. Good luck!</p>
+</header>
+
+<div class="main">
+    <div class="game-view hidden" id="game-view">
+        <h2 id="scene-title">Introduction</h2>
+
+        <div id="game-status">
+            <p id="score">Score: 0</p>
+            <p id="timer">Time: 00:00</p>
+        </div>
+
+        <div class="break-timer" id="break-timer">&nbsp;</div>
+        <p class="hidden" id="telemedicine-count">Telemedicine Sessions: 0</p>
+        <p class="hidden" id="final-score">Final Score: 0</p>
+        <p id="scene-story">&nbsp;</p>
+        <div class="disease-chart" id="disease-chart">&nbsp;</div>
+        <div class="choices" id="choices">&nbsp;</div>
+    </div>
+
+    <button id="start-button">Start Game</button>
+
+    <div class="game-over hidden" id="game-over">
+        <div class="game-over-card">
+            <h2>Game Over!</h2>
+            <p id="final-message">Thank you for playing.</p>
+            <button class="hidden" id="restart-game-btn">Restart</button>
+        </div>
+    </div>
+</div>

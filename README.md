@@ -60,37 +60,72 @@ CSS plays a pivotal role in this project, especially in managing the visibility 
 
 ### Detailed Breakdown of `main.js`
 ```javascript
-document.getElementById('start-button').addEventListener('click', function() {
-    startGame();
-});
+## JavaScript Logic and Functionality
 
+Below is a detailed breakdown of the key JavaScript functions used in the Hospital Simulator Game. These functions handle the game logic, manage the UI state, and ensure a smooth player experience:
+
+```javascript
+// Start the game by initializing game settings and displaying the first patient
 function startGame() {
+    resetScore();
     displayNewPatient();
     startTimer();
+    hideElement('start-button');
+    showElement('game-view');
 }
 
-function displayNewMaritimeClinic() {
-    // Logic to display patient symptoms and accept user input for diagnosis
+// Display a new patient scenario by updating the UI with relevant information
+function displayNewPatient() {
+    const patientData = getPatientData();
+    document.getElementById('patient-name').textContent = patientData.name;
+    document.getElementById('patient-symptoms').textContent = patientData.symptoms;
+    updateChoices(patientData.choices);
+    hideElement('game-over');
+    showElement('game-view');
 }
 
+// Start the main game timer and update the UI every second
 function startTimer() {
-    // Timer logic for managing game time and breaks
+    let startTime = Date.now();
+    timerInterval = setInterval(function() {
+        let elapsedTime = Date.now() - startTime;
+        let minutes = Math.floor(elapsedTime / 60000);
+        let seconds = ((elapsedTime % 60000) / 1000).toFixed(0);
+        document.getElementById('timer').textContent = minutes + ':' + (seconds < 10 ? '0' : '') + seconds;
+    }, 1000);
 }
 
-function evaluateDecision(decision) {
-    if (decision.correct) {
-        updateScore();
+// Handle player's choice and decide the next step based on correctness
+function handleChoice(isCorrect) {
+    if (isCorrect) {
+        increaseScore();
+        displayNextPatient();
     } else {
-        showFeedback();
+        showFeedback('Incorrect. Try again!');
     }
 }
 
-function updateScore() {
-    // Updates the player's score based on correct diagnoses
+// Increase the player's score for a correct diagnosis
+function increaseScore() {
+    score += 1;
+    document.getElementById('score').textContent = 'Score: ' + score;
 }
 
-function showFeedback() {
-    // Provides feedback for incorrect decisions
+// Show or hide elements by adding/removing the 'hidden' class
+function showElement(elementId) {
+    document.getElementById(elementId).classList.remove('hidden');
 }
+
+function hideElement(elementId) {
+    document.getElementById(elementId).classList.add('hidden');
+}
+
+// Stop the game timer and clean up resources
+function stopGame() {
+    clearInterval(timerInterval);
+    showElement('game-over');
+    hideElement('game-view');
+}
+
 
 

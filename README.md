@@ -16,8 +16,7 @@ The game aims to simulate the experience of a doctor during a shift, where playe
 - **End Game**: The game concludes after a set number of shifts or upon reaching an end condition, such as too many incorrect diagnoses.
 
 ### Game Flow
-1. **Starting the Game**:
-   - Players begin by clicking the 'Start Game' button.
+1. **Starting the Game/Introduction**:
    - Here players are also introduced to the common symptoms and diagnoses they may see.
 
 2. **Patient Diagnoses**:
@@ -33,11 +32,8 @@ The game aims to simulate the experience of a doctor during a shift, where playe
    - Points are awarded based on the accuracy of diagnoses and the efficiency of time management.
    - Feedback is provided at the end of each shift, summarizing the player's performance.
 
-5. **Conclusion**:
-   - The game ends with an overall performance review, including total score and areas for improvement.
-
 ## Game Mechanics
-The game is designed to operate within a single web page, leveraging HTML, CSS, and JavaScript to create a seamless and dynamic user experience. The interface transitions between various states of gameplay—such as diagnosing patients, managing break times, and viewing game over screens—without the need to load new pages.
+The game is designed to operate within a Qualtrics environment, leveraging HTML, CSS, and JavaScript to create a seamless and dynamic user experience. The interface transitions between various states of gameplay—such as diagnosing patients, managing break times, and viewing game over screens—without the need to load new pages.
 
 ### Key Features:
 - **Single-Page Application:** All components of the game are loaded once and displayed within a single page.
@@ -57,6 +53,12 @@ CSS plays a pivotal role in this project, especially in managing the visibility 
 - **index.html**: Hosts the structural layout of the game's interface.
 - **style.css**: Defines all the CSS rules for the game, ensuring a consistent and engaging visual experience.
 - **main.js**: Contains all the logic for game operation, including timers, game state management, and event handling.
+- 
+### Future Directions
+- **Fix Game Loop:** Working on resolving the game loop termination in the Qualtrics environment to ensure smooth gameplay and proper session endings.
+- **JSON Loading:** Plans are underway to enhance the game's flexibility and scalability by allowing it to run based on a JSON file that describes various patient scenarios. This will facilitate easier updates and expansions of scenario data without altering the core game code.
+- **Expand Scenarios:** We aim to enrich the gameplay experience by introducing more complex patient cases featuring multiple valid outcomes, thereby increasing the depth and educational value of the game.
+
 
 
 
